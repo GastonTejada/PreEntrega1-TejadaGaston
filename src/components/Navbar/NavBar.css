@@ -1,5 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Work+Sans:ital,wght@1,500&display=swap');
+
 .navbar{
-  background-color: #f0311e;
   box-shadow: 5px 5px 15px gray;
   height: 120px;  
 }

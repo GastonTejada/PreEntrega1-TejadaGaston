@@ -1,45 +1,48 @@
+import React from 'react'
+import { useState } from 'react';
+import { Link } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import CartWidget from '../CartWidget/CartWidget'
 import logo from '../../images/logo.png'
-import './NavBar.css'
-
 
 const Navbar = () => {
-    return (
-            <nav className="navbar navbar-expand-lg bg-body-tertiary">
-                <div className='logo'>
-                    <img src={logo} alt='logo' img-fluid/>
-                    <h1>POPCORN TIME</h1>   
+
+    const [selectedItem, setSelectedItem] = useState(null);
+    
+    const ItemClick = (item) => {
+        setSelectedItem(item);
+      };
+
+    return (            
+            <nav className="navbar navbar-expand-lg bg-body-tertiary">                                
+                <Link to="/" className={`logo ${selectedItem === ''}`} onClick={() => ItemClick('logo')}><img src={logo} alt='logo'/><h1>PopCorn Time</h1></Link>
+                <div className="subtitulo">
+                    <h6>Movies Store</h6>
                 </div>
-                <div className="container-fluid">                
-                    <button
-                        className="navbar-toggler"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#navbarNav"
-                        aria-controls="navbarNav"
-                        aria-expanded="false"
-                        aria-label="Toggle navigation"
-                    >
-                        <span className="navbar-toggler-icon"></span>
-                    </button>
+                <div className="container-fluid">                                    
                     <div className="collapse navbar-collapse" id="navbarNav">
                         <ul className="navbar-nav">                            
                             <li className="nav-item">
-                                <a className="nav-link" href="#">Nosotros</a>
+                                <Link className={`navlink ${selectedItem === 'item1' ? 'selected' : ''}`} to="/peliculas/Action" onClick={() => ItemClick('item1')}>Acción</Link>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#">Contacto</a>
+                                <Link className={`navlink ${selectedItem === 'item2' ? 'selected' : ''}`} to="/peliculas/Drama" onClick={() => ItemClick('item2')}>Drama</Link>
                             </li>
                             <li className="nav-item">                                
-                                <a className="nav-link" href="#">Buscar</a>
+                                <Link className={`navlink ${selectedItem === 'item3' ? 'selected' : ''}`} to="/peliculas/Crime" onClick={() => ItemClick('item3')}>Crimen</Link>
+                            </li>
+                            <li className="nav-item">                                
+                                <Link className={`navlink ${selectedItem === 'item4' ? 'selected' : ''}`} to="/peliculas/Animation" onClick={() => ItemClick('item4')}>Animación</Link>
+                            </li>
+                            <li className="nav-item">                                
+                                <Link className={`navlink ${selectedItem === 'item5' ? 'selected' : ''}`} to="/peliculas/Comedy" onClick={() => ItemClick('item5')}>Comedia</Link>
                             </li>
                         </ul>
                     </div>
                 </div>
                 <CartWidget />
-            </nav>
-    );
+            </nav>            
+    )
 };
 
 export default Navbar;

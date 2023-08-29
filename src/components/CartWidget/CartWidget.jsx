@@ -1,4 +1,4 @@
-import carrito from '../../images/pngegg.png'
+import carrito from '../../images/carrito.png'
 import './CartWidget.css'
 
 const CartWidget = () => {

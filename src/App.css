@@ -1,27 +1,10 @@
-@charset "UTF-8";
-@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Raleway&family=Roboto&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@1,500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Work+Sans:ital,wght@1,500&display=swap');
-
-* {
-  padding: 0;
-  margin: 0;
-}
-
-html {
-  font-size: 62, 5%;
-}
-
-.App-header{
-  background-color: #f0311e;
-  font-weight: 400;
-  line-height: 1.5;
-  display: block;
-  justify-content: space-between;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 11;
-}
+.App{    
+    background: url('../src/images/Metallic-texture.jpg') no-repeat center fixed;
+    background-size: cover;    
+    font-family: "roboto", sans-serif;
+    text-align: left;
+    font-weight: bolder;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
